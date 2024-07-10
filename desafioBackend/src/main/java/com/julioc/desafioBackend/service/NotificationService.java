@@ -18,14 +18,12 @@ public class NotificationService {
         String email = user.getEmail();
         NotificationDto notificationRequest = new NotificationDto(email,message);
 
-        ResponseEntity<String> notificationResponse = restTemplate.postForEntity("https://util.devi.tools/api/v1/notify", notificationRequest, String.class);
-
-        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)){
-            System.out.println("Erro notify");
-            throw new Exception("Offline notification service");
-        }
-
+//        ResponseEntity<String> notificationResponse = restTemplate.postForEntity("https://util.devi.tools/api/v1/notify", notificationRequest, String.class);
+//
+//        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)){
+//            System.out.println("Erro notify");
+//            throw new Exception("Offline notification service");
+//        }
+        System.out.println("Notification send user");
     }
-
-
 }
