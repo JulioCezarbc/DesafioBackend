@@ -1,5 +1,6 @@
 package com.julioc.desafioBackend.domain.user;
 
+import com.julioc.desafioBackend.dtos.UserDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
 
@@ -27,5 +29,14 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    public User(UserDto data){
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.document = data.document();
+        this.email = data.email();
+        this.password = data.password();
+        this.balance = data.balance();
+        this.userType = data.userType();
+    }
 
 }
